@@ -16,17 +16,19 @@ import com.junioratoche.backend.domain.Price;
 @Component
 public interface PriceResponseMapper {
 
-    @Mappings({ @Mapping(source = "productId", target = "productId"), 
-        @Mapping(source = "brand.id", target = "brandId"),
-        @Mapping(source = "priceList", target = "priceList"),
-        @Mapping(source = "startDate", target = "startDate"),
-        @Mapping(source = "endDate", target = "endDate"),
-        @Mapping(source = "price", target = "price"),
-        @Mapping(source = "curr", target = "currency") })
-    PriceResponse priceToPriceResponse(Price findById);
-
+	@Mappings({
+	    @Mapping(source = "product.productId", target = "productId"), 
+	    @Mapping(source = "brand.brandId", target = "brandId"),
+	    @Mapping(source = "priceList", target = "priceList"),
+	    @Mapping(source = "startDate", target = "startDate"),
+	    @Mapping(source = "endDate", target = "endDate"),
+	    @Mapping(source = "price", target = "price"),
+	    @Mapping(source = "currency", target = "currency")
+	})
+	PriceResponse priceToPriceResponse(Price findById);
+	
     List<PriceResponse> priceListToPriceResponseList(List<Price> priceList);
 
     @InheritInverseConfiguration
-    PriceEntity priceResponseToPrice(PriceResponse source);
+    Price priceResponseToPrice(PriceResponse source);
 }

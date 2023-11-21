@@ -2,23 +2,34 @@ package com.junioratoche.backend.adapter.out.db.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Date;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
+@Entity
 @Table(name = "prices")
 public class PriceEntity {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	@ManyToOne
-	@JoinColumn(name = "brandId")
+	@JoinColumn(name = "brand_Id")
 	private BrandEntity brand;
-	private LocalDateTime startDate;
-	private LocalDateTime endDate;
+	@Column(name = "start_Date")
+	private Date startDate;
+	@Column(name = "end_Date")
+	private Date endDate;
+	@Column(name = "price_List")
 	private Integer priceList;
+	@Column(name = "product_Id")
 	private Integer productId;
 	private Integer priority;
 	private BigDecimal price;
@@ -36,16 +47,16 @@ public class PriceEntity {
 	public void setBrand(BrandEntity brand) {
 		this.brand = brand;
 	}
-	public LocalDateTime getStartDate() {
+	public Date getStartDate() {
 		return startDate;
 	}
-	public void setStartDate(LocalDateTime startDate) {
+	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
-	public LocalDateTime getEndDate() {
+	public Date getEndDate() {
 		return endDate;
 	}
-	public void setEndDate(LocalDateTime endDate) {
+	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
 	public Integer getPriceList() {
