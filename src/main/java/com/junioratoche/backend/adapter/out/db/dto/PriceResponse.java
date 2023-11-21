@@ -1,4 +1,4 @@
-package com.junioratoche.backend.adapter.db.dto;
+package com.junioratoche.backend.adapter.out.db.dto;
 
 import java.time.LocalDateTime;
 

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import com.junioratoche.backend.adapter.db.dto.PriceResponse;
+import com.junioratoche.backend.adapter.out.db.dto.PriceResponse;
 import com.junioratoche.backend.adapter.out.db.mapper.PriceResponseMapper;
 import com.junioratoche.backend.domain.Price;
 import com.junioratoche.backend.port.in.http.PriceInputPort;

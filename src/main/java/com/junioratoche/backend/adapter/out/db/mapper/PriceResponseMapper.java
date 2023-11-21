@@ -8,7 +8,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 import org.springframework.stereotype.Component;
 
-import com.junioratoche.backend.adapter.db.dto.PriceResponse;
+import com.junioratoche.backend.adapter.out.db.dto.PriceResponse;
 import com.junioratoche.backend.adapter.out.db.entity.PriceEntity;
 import com.junioratoche.backend.domain.Price;
 
