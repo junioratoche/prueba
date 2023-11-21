@@ -18,10 +18,10 @@ import jakarta.persistence.TypedQuery;
 public class H2DBRepository implements EntityRepositoryOutputPort {
 
     @PersistenceContext
-    private EntityManager entityManager;
+    EntityManager entityManager;
     
     @Autowired
-    private PriceEntityMapper priceEntityMapper;
+    PriceEntityMapper priceEntityMapper;
 
     @Override
     public List<Price> getAll() {
