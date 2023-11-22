@@ -2,7 +2,7 @@
 
 En la carpeta docs se adjunta el enunciado para el reto de creación de API de consulta de precios de una empresa retail dedicada al comercio electrónico.
 
-#Solución
+# Solución
 
 Para dar solución al test, se consideraron los siguientes pasos:
 
@@ -32,15 +32,15 @@ https://editor.swagger.io/
 
 #JUnit:
 
-![Image](/docs/images/ArquitecturaHexagonalProject.jpg)
+![Image](/docs/images/JUnitTest.jpg)
 
  #Swagger:
 
-![Image](/docs/images/ArquitecturaHexagonalProject.jpg)
+![Image](/docs/images/SwaggerTest.jpg)
 
  #Postman:
  
-![Image](/docs/images/ArquitecturaHexagonalProject.jpg)
+![Image](/docs/images/PostmanTest.jpg)
 
 
 **Url API**: http://localhost:8081/price/getByBrandAndProduct?applicationDate=applicationDate&productId=productId&brandId=brandId
