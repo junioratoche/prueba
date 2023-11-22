@@ -19,7 +19,7 @@ Para dar solución al test, se consideraron los siguientes pasos:
 - 	/adapter (implementaciones)
 
 4. Para las pruebas:
-- 	/test****
+- 	/test
 
 5. Se aplicó el enfoque API First y se usó una herramientas de generación de código a partir del diseño de APIs con la funcionalidad dada en el siguiente link
 https://editor.swagger.io/
@@ -32,11 +32,11 @@ https://editor.swagger.io/
 
 #JUnit:
 
-	![Image](/docs/images/JUnitTest.jpg)
+	![Image](/docs/images/SwaggerTest.jpg)
 
  #Swagger:
 
-	![Image](/docs/images/SwaggerTest.jpg)
+	![Image](/docs/images/APIFirst.jpg)
 
  #Postman:
  
