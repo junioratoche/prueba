@@ -2,7 +2,7 @@
 
 En la carpeta docs se adjunta el enunciado para el reto de creación de API de consulta de precios de una empresa retail dedicada al comercio electrónico.
 
-# Solución
+## Solución
 
 Para dar solución al test, se consideraron los siguientes pasos:
 
@@ -30,15 +30,15 @@ https://editor.swagger.io/
 
 7. Las pruebas se realizaron a través de JUnit, Postman, Swagger. Se adjunta en la carpeta docs, el archivo Collection para las pruebas Postman.
 
-# JUnit:
+### JUnit:
 
 ![Image](/docs/images/JUnitTest.jpg)
 
- # Swagger:
+ ### Swagger:
 
 ![Image](/docs/images/SwaggerTest.jpg)
 
- # Postman:
+ ### Postman:
  
 ![Image](/docs/images/PostmanTest.jpg)
 
