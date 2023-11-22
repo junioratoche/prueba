@@ -1,7 +1,6 @@
 package com.junioratoche.backend.adapter.out.db.entity;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 import jakarta.persistence.Column;

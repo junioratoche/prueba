@@ -2,14 +2,24 @@ package com.junioratoche.backend.adapter.out.db.dto;
 
 import java.time.LocalDateTime;
 
-public class PriceResponse {
+import io.swagger.v3.oas.annotations.media.Schema;
 
+@Schema(name = "PriceResponse", description = "Model representing the price consulted")
+public class PriceResponse {
+	
+	@Schema(name = "productId", example = "35455", description = "Identifier product code")
 	private Long productId;
+	@Schema(name = "brandId", example = "1", description = "Brand identifier")
 	private Long brandId;
+	@Schema(name = "priceList", example = "1", description = "Applicable price rate identifier")
 	private Integer priceList;
+	@Schema(name = "startDate", example = "2020-06-14-00.00.00", description = "Start date of the date range to which the price rate applies")
 	private LocalDateTime startDate;
+	@Schema(name = "endDate", example = "2020-12-31-23.59.59", description = "End date of the date range in which the price rate applies")
 	private LocalDateTime endDate;
+	@Schema(name = "price", example = "35.50", description = "Final sales price")
 	private Double price;
+	@Schema(name = "currency", example = "EUR", description = "ISO of the currency")
 	private String currency;
 
 	public Long getProductId() {
