@@ -12,6 +12,8 @@ import com.junioratoche.backend.port.in.http.PriceInputPort;
 import java.util.Date;
 import java.util.List;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -45,18 +47,12 @@ public class HttpInputAdapter {
 			@RequestParam(name = "productId", required = false) Integer productId,
 			@RequestParam(name = "brandId", required = false) Integer brandId) {
 
-		try {
-			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
-			Date applicationDate = dateFormat.parse(applicationDateString);
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		LocalDateTime applicationDate = LocalDateTime.parse(applicationDateString, formatter);
 
-			Price findById = priceInputPort.getPriceByBrandAndProductInApplicationDate(applicationDate, productId,
-					brandId);
-			PriceResponse priceToPriceResponse = priceResponseMapper.priceToPriceResponse(findById);
-			return priceToPriceResponse;
-		} catch (ParseException e) {
-
-			e.printStackTrace();
-			return null;
-		}
+		Price findByParam = priceInputPort.getPriceByBrandAndProductInApplicationDate(applicationDate, productId,
+				brandId);
+		PriceResponse priceToPriceResponse = priceResponseMapper.priceToPriceResponse(findByParam);
+		return priceToPriceResponse;
 	}
 }

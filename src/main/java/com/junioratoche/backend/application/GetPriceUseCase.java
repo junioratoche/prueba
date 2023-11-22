@@ -1,5 +1,6 @@
 package com.junioratoche.backend.application;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class GetPriceUseCase implements PriceInputPort {
 	}
 
 	@Override
-	public Price getPriceByBrandAndProductInApplicationDate(Date applicationDate, int productId, int brandId) {
+	public Price getPriceByBrandAndProductInApplicationDate(LocalDateTime applicationDate, int productId, int brandId) {
 		Price price = entityRepositoryOutputPort.getPriceByBrandAndProductInApplicationDate(applicationDate, productId,
 				brandId);
 		return price;

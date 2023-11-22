@@ -1,5 +1,6 @@
 package com.junioratoche.backend.adapter.out.db;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,35 +18,32 @@ import jakarta.persistence.TypedQuery;
 @Component
 public class H2DBRepository implements EntityRepositoryOutputPort {
 
-    @PersistenceContext
-    EntityManager entityManager;
-    
-    @Autowired
-    PriceEntityMapper priceEntityMapper;
+	@PersistenceContext
+	EntityManager entityManager;
 
-    @Override
-    public List<Price> getAll() {
-        TypedQuery<PriceEntity> query = entityManager.createQuery("SELECT p FROM PriceEntity p", PriceEntity.class);
-        List<PriceEntity> priceEntityList = query.getResultList();
-        return priceEntityList.stream()
-                .map(priceEntityMapper::priceEntityToPrice)
-                .collect(Collectors.toList());
-    }
+	@Autowired
+	PriceEntityMapper priceEntityMapper;
 
-    @Override
-    public Price getPriceByBrandAndProductInApplicationDate(Date applicationDate, int productId, int brandId) {
-        TypedQuery<PriceEntity> query = entityManager.createQuery(
-            "SELECT p FROM PriceEntity p " +
-            "WHERE p.startDate <= :applicationDate " +
-            "AND p.endDate >= :applicationDate " +
-            "AND p.productId = :productId " +
-            "AND p.brand.id = :brandId", PriceEntity.class
-        );
-        query.setParameter("applicationDate", applicationDate);
-        query.setParameter("productId", productId);
-        query.setParameter("brandId", brandId);
+	@Override
+	public List<Price> getAll() {
+		TypedQuery<PriceEntity> query = entityManager.createQuery("SELECT p FROM PriceEntity p", PriceEntity.class);
+		List<PriceEntity> priceEntityList = query.getResultList();
+		return priceEntityList.stream().map(priceEntityMapper::priceEntityToPrice).collect(Collectors.toList());
+	}
 
-        List<PriceEntity> resultList = query.getResultList();
-        return resultList.isEmpty() ? null : priceEntityMapper.priceEntityToPrice(resultList.get(0));
-    }
+	@Override
+	public Price getPriceByBrandAndProductInApplicationDate(LocalDateTime applicationDate, int productId, int brandId) {
+		TypedQuery<PriceEntity> query = entityManager.createQuery("SELECT p FROM PriceEntity p "
+				+ "WHERE p.startDate <= :applicationDate " + "AND p.endDate >= :applicationDate "
+				+ "AND p.productId = :productId " + "AND p.brand.id = :brandId " + "ORDER BY p.priority DESC",
+				PriceEntity.class);
+		
+		query.setParameter("applicationDate", applicationDate);
+		query.setParameter("productId", productId);
+		query.setParameter("brandId", brandId);
+		query.setMaxResults(1);
+
+		List<PriceEntity> resultList = query.getResultList();
+		return resultList.isEmpty() ? null : priceEntityMapper.priceEntityToPrice(resultList.get(0));
+	}
 }
