@@ -30,15 +30,15 @@ https://editor.swagger.io/
 
 7. Las pruebas se realizaron a través de JUnit, Postman, Swagger. Se adjunta en la carpeta docs, el archivo Collection para las pruebas Postman.
 
-#JUnit:
+# JUnit:
 
 ![Image](/docs/images/JUnitTest.jpg)
 
- #Swagger:
+ # Swagger:
 
 ![Image](/docs/images/SwaggerTest.jpg)
 
- #Postman:
+ # Postman:
  
 ![Image](/docs/images/PostmanTest.jpg)
 
