@@ -14,7 +14,6 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 
-
 @Component
 public class H2DBRepository implements EntityRepositoryOutputPort {
 
@@ -33,21 +32,17 @@ public class H2DBRepository implements EntityRepositoryOutputPort {
 
 	@Override
 	public Price getPriceByBrandAndProductInApplicationDate(LocalDateTime applicationDate, int productId, int brandId) {
-	    TypedQuery<PriceEntity> query = entityManager.createQuery(
-	            "SELECT p FROM PriceEntity p " +
-	                    "WHERE p.startDate <= :applicationDate " +
-	                    "AND p.endDate >= :applicationDate " +
-	                    "AND p.productId = :productId " +
-	                    "AND p.brand.id = :brandId " +
-	                    "ORDER BY p.priority DESC",
-	            PriceEntity.class);
+		TypedQuery<PriceEntity> query = entityManager.createQuery("SELECT p FROM PriceEntity p "
+				+ "WHERE p.startDate <= :applicationDate " + "AND p.endDate >= :applicationDate "
+				+ "AND p.productId = :productId " + "AND p.brand.id = :brandId " + "ORDER BY p.priority DESC",
+				PriceEntity.class);
 
-	    query.setParameter("applicationDate", applicationDate);
-	    query.setParameter("productId", productId);
-	    query.setParameter("brandId", brandId);
-	    query.setMaxResults(1);
+		query.setParameter("applicationDate", applicationDate);
+		query.setParameter("productId", productId);
+		query.setParameter("brandId", brandId);
+		query.setMaxResults(1);
 
-	    List<PriceEntity> resultList = query.getResultList();
-	    return resultList.isEmpty() ? null : priceEntityMapper.priceEntityToPrice(resultList.get(0));
+		List<PriceEntity> resultList = query.getResultList();
+		return resultList.isEmpty() ? null : priceEntityMapper.priceEntityToPrice(resultList.get(0));
 	}
 }

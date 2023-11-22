@@ -6,7 +6,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 
 @Schema(name = "PriceResponse", description = "Model representing the price consulted")
 public class PriceResponse {
-	
+
 	@Schema(name = "productId", example = "35455", description = "Identifier product code")
 	private Long productId;
 	@Schema(name = "brandId", example = "1", description = "Brand identifier")

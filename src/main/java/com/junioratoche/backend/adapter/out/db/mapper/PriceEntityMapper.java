@@ -13,17 +13,13 @@ import com.junioratoche.backend.domain.Price;
 @Component
 public interface PriceEntityMapper {
 
-    @Mappings({
-        @Mapping(target = "product.productId", source = "productId"),
-        @Mapping(target = "brand.brandId", source = "brand.id"),
-        @Mapping(target = "priceList", source = "priceList"),
-        @Mapping(target = "startDate", source = "startDate"),
-        @Mapping(target = "endDate", source = "endDate"),
-        @Mapping(target = "price", source = "price"),
-        @Mapping(target = "currency", source = "curr")
-    })
-    Price priceEntityToPrice(PriceEntity priceEntity);
+	@Mappings({ @Mapping(target = "product.productId", source = "productId"),
+			@Mapping(target = "brand.brandId", source = "brand.id"),
+			@Mapping(target = "priceList", source = "priceList"), @Mapping(target = "startDate", source = "startDate"),
+			@Mapping(target = "endDate", source = "endDate"), @Mapping(target = "price", source = "price"),
+			@Mapping(target = "currency", source = "curr") })
+	Price priceEntityToPrice(PriceEntity priceEntity);
 
-    @InheritInverseConfiguration
-    PriceEntity priceToPriceEntity(Price price);
+	@InheritInverseConfiguration
+	PriceEntity priceToPriceEntity(Price price);
 }

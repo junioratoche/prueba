@@ -44,7 +44,7 @@ public class HttpInputAdapter {
 			@RequestParam(name = "productId", required = false) Integer productId,
 			@RequestParam(name = "brandId", required = false) Integer brandId) {
 
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH.mm.ss");
 		LocalDateTime applicationDate = LocalDateTime.parse(applicationDateString, formatter);
 
 		Price findByParam = priceInputPort.getPriceByBrandAndProductInApplicationDate(applicationDate, productId,
