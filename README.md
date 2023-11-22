@@ -50,7 +50,7 @@ https://editor.swagger.io/
 **Acceso a swagger**:
 http://localhost:8081/swagger.html
 
-#Tecnologías y herramientas :
+**Tecnologías y herramientas** :
 
 - Java 17
 - SpringBoot
@@ -61,3 +61,7 @@ http://localhost:8081/swagger.html
 - Swagger
 - JUnit
 - Postman
+- Open API
+- Principios SOLID
+- Arquitectura Hexagonal
+
