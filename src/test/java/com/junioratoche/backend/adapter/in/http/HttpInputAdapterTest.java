@@ -5,18 +5,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.time.LocalDateTime;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.context.annotation.ComponentScan;
 import com.junioratoche.backend.adapter.out.db.dto.PriceResponse;
 import com.junioratoche.backend.adapter.out.db.mapper.PriceResponseMapper;
 import com.junioratoche.backend.domain.Price;
 import com.junioratoche.backend.port.in.http.PriceInputPort;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@ComponentScan(basePackages = "com.junioratoche.backend")
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(SpringExtension.class)
 @DataJpaTest
 class HttpInputAdapterTest {
 
