@@ -32,15 +32,15 @@ https://editor.swagger.io/
 
 #JUnit:
 
-	![Image](/docs/images/SwaggerTest.jpg)
+![Image](/docs/images/ArquitecturaHexagonalProject.jpg)
 
  #Swagger:
 
-	![Image](/docs/images/APIFirst.jpg)
+![Image](/docs/images/ArquitecturaHexagonalProject.jpg)
 
  #Postman:
  
-	![Image](/docs/images/PostmanTest.jpg)
+![Image](/docs/images/ArquitecturaHexagonalProject.jpg)
 
 
 **Url API**: http://localhost:8081/price/getByBrandAndProduct?applicationDate=applicationDate&productId=productId&brandId=brandId
