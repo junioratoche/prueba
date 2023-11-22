@@ -1,7 +1,6 @@
 package com.junioratoche.backend.adapter.in.http;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import java.text.ParseException;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,9 +8,7 @@ import com.junioratoche.backend.adapter.out.db.dto.PriceResponse;
 import com.junioratoche.backend.adapter.out.db.mapper.PriceResponseMapper;
 import com.junioratoche.backend.domain.Price;
 import com.junioratoche.backend.port.in.http.PriceInputPort;
-import java.util.Date;
 import java.util.List;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 

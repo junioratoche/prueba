@@ -8,14 +8,17 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.ComponentScan;
+
 import com.junioratoche.backend.adapter.out.db.dto.PriceResponse;
 import com.junioratoche.backend.adapter.out.db.mapper.PriceResponseMapper;
 import com.junioratoche.backend.domain.Price;
 import com.junioratoche.backend.port.in.http.PriceInputPort;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@ExtendWith(SpringExtension.class)
-@DataJpaTest
+@SpringBootTest
+@ComponentScan(basePackages = "com.junioratoche.backend")
 class HttpInputAdapterTest {
 
 	@Autowired

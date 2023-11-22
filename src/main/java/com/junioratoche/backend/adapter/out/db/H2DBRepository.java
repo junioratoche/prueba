@@ -9,9 +9,11 @@ import com.junioratoche.backend.adapter.out.db.entity.PriceEntity;
 import com.junioratoche.backend.adapter.out.db.mapper.PriceEntityMapper;
 import com.junioratoche.backend.domain.Price;
 import com.junioratoche.backend.port.out.db.EntityRepositoryOutputPort;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
+
 
 @Component
 public class H2DBRepository implements EntityRepositoryOutputPort {
